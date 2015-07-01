@@ -1,0 +1,118 @@
+﻿#mapwrapper {
+  max-width: 100%;
+  /* margin: 0 auto; */
+  padding: 0 0;
+  background-color: transparent;
+  min-width: 220px;
+  position: absolute;
+  top: 0;
+}
+circle[id^='map_points_shadow_'] {
+    display:none;   
+}
+#map_base svg {
+	max-height: 100%;
+	width: 100%;
+	margin: 0;
+}
+@media screen and (max-width: 320px){
+	#map_base svg {
+		height:320px;
+	}
+}
+@media screen and (max-width: 400px) and (min-width: 321px) {
+	#map_base svg {
+		height:400px;
+	}
+}
+@media screen and (max-width: 480px) and (min-width: 401px) {
+	#map_base svg {
+		height:500px;
+	}
+}
+@media screen and (max-width: 568px) and (min-width: 481px) {
+	#map_base svg {
+		height:600px;
+	}
+}
+@media screen and (max-width: 685px) and (min-width: 569px) {
+	#map_base svg {
+		height:720px;
+	}
+}
+@media screen and (max-width: 767px) and (min-width: 686px) {
+	#map_base svg {
+		height:740px;
+	}
+}
+@media screen and (max-width: 979px) and (min-width: 768px) {
+	#map_base svg {
+		height:760px;
+	}
+}
+@media screen and (max-width: 1024px) and (min-width: 980px) {
+	#map_base svg {
+		height:780px;
+	}
+}
+@media screen and (max-width: 1280px) and (min-width: 1025px) {
+	#map_base svg {
+		height:800px;
+	}
+}
+@media screen and (min-width: 1281px) {
+	#map_base svg {
+		  height: 500px;
+		  /* width: 100%; */
+		  margin: 20px;
+		  margin-top: 180px;
+	}
+}
+#custom-map-tip, #map-tip {
+  font: 14px/16px Trebuchet MS, Helvetica, Arial, sans-serif;
+  display: none;
+  color: #2d358e;
+  z-index: 1000;
+  float: left;
+  background: rgba(255, 153, 0, 0.5);
+  word-break: keep-all !important;
+  padding: 15px !important;
+  border-radius: 5px;
+  box-shadow: none;
+  white-space: nowrap;
+  position: absolute !important;
+  display: none;
+}
+#custom-map-tip u, #map-tip u { 
+	text-decoration: none;
+	font-weight: bold;
+	font-size:16px;
+	line-height: 16px;
+	padding:0;
+	margin-bottom: 10px;
+}
+#custom-map-tip h3 {
+  margin-top: 0;
+  margin-bottom: -10px;
+  font-size: 18px;
+
+}
+#custom-map-tip p, #map-tip p {
+	margin: 0!important;
+}
+#custom-map-tip img, #map-tip img {
+	float: left;
+	padding: 3px;
+}
+span#custom-map-tip:after, span#map-tip:after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 30px;
+    bottom: -20px;
+    	width: 0;
+	height: 0;
+	border-top: 20px solid rgba(255, 153, 0, 0.5);
+	border-right: 20px solid transparent;
+}
