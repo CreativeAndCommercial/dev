@@ -99,7 +99,7 @@
       </div>
       <div class="col-lg-2 col-md-2 col-sm-12">
         <!-- Donate -->
-        <a id="donate-btn" href="#" class="pull-right"><span>Click here to</span>Donate</a>
+        <a id="donate-btn" href="/donate" class="pull-right"><span>Click here to</span>Donate</a>
         <!-- Social -->
         <ul id="social-links" class="list-inline pull-right clearfix">
           <li><a href="#"><i class="twitter"></i></a></li>
