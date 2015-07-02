@@ -23,19 +23,19 @@ get_header(); ?>
     <div class="row">
       <div class="col-lg-12">
         <!-- Carousel -->
-        <img id="carousel-overlay" src="images/carousel-over.png" class="hidden-xs" />
+        <img id="carousel-overlay" src="<?php echo get_template_directory_uri(); ?>/images/carousel-over.png" class="hidden-xs" />
         <div id="chai-carousel" class="carousel slide" data-ride="carousel">
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
             <div class="item active">
-              <img src="images/slide1.jpg">
+              <img src="<?php echo get_template_directory_uri(); ?>/images/slide1.jpg">
               <div class="carousel-caption">
                 <h3>“In the jewellery class, it’s the fact you like pink beads that defines you, not your cancer.”</h3>
                 <h4>Rebecca Silver, Jewellery Group</h4>
               </div>
             </div>
             <div class="item">
-              <img src="images/slide1.jpg">
+              <img src="<?php echo get_template_directory_uri(); ?>/images/slide1.jpg">
               <div class="carousel-caption">
                 <h3>“In the jewellery class, it’s the fact you like pink beads that defines you, not your cancer.”</h3>
                 <h4>Rebecca Silver, Jewellery Group</h4>
@@ -44,11 +44,11 @@ get_header(); ?>
           </div>
           <!-- Controls -->
           <a class="left carousel-control" href="#chai-carousel" role="button" data-slide="prev">
-            <img src="images/leftarrow.png" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/leftarrow.png" />
             <span class="sr-only">Previous</span>
           </a>
           <a class="right carousel-control" href="#chai-carousel" role="button" data-slide="next">
-            <img src="images/rightarrow.png" />
+            <img src="<?php echo get_template_directory_uri(); ?>/images/rightarrow.png" />
             <span class="sr-only">Next</span>
           </a>
         </div>
