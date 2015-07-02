@@ -68,7 +68,7 @@
       <div class="col-lg-3 col-md-3 col-sm-12">
         <!-- Logo -->
         <!-- #Brand -->
-        <a href="#" class="navbar-brand pull-left"><img src="images/logo.jpg" width="180"/></a>
+        <a href="#" class="navbar-brand pull-left"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.jpg" width="180"/></a>
         <!-- #Brand -->
       </div>
       <div class="col-lg-7 col-md-7 col-sm-12">

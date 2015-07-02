@@ -189,7 +189,7 @@ ul#social-links li {
     padding-right: 0;
 }
 #social-links li a i {
-	background: url(../images/sprite.png);
+	background: url(images/sprite.png);
 	width:20px;
 	height:20px;
 	display: block;
