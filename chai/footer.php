@@ -34,11 +34,11 @@
 <!-- Le javascript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/lazyload.js"></script>
-<script src="js/map-config.js" type="text/javascript"></script>
-<script src="js/pin-config.js" type="text/javascript"></script>
-<script src="js/map-interact.js" type="text/javascript"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/lazyload.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/map-config.js" type="text/javascript"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/pin-config.js" type="text/javascript"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/map-interact.js" type="text/javascript"></script>
 <script type="text/javascript">
 var xpos, ypos;
 $(function() {
