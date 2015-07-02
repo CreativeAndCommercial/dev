@@ -379,7 +379,7 @@ section#features {
   margin-left: -25px;
   margin-top: 0;
   height: 60px;
-  background: url(../images/play-btn.png);
+  background: url(images/play-btn.png);
   background-size: cover;
   z-index: 11;
 }
@@ -503,7 +503,7 @@ html body span#map-tip {
 .filter select {
   -webkit-appearance: none;
   padding: 5px;
-  background: white url(../images/chevron-down.png)no-repeat 100%;
+  background: white url(images/chevron-down.png)no-repeat 100%;
   border: 2px solid rgb(44, 53, 142);
   border-radius: 0;
   line-height: 16px;
