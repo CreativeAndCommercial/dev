@@ -1,0 +1,423 @@
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * Contains the closing of the "site-content" div and all content after.
+ *
+ * @package WordPress
+ * @subpackage Lemuria_Jewels
+ * @since Lemuria Jewels 1.0
+ */
+?>
+<footer id="footer">
+	<div class="container">
+		<div class="row">
+				<div class="col-lg-12">
+					<ul id="footernav" class="list-inline">
+						<li id="fabout" class="col-lg-2">
+							<ul class="list-unstyled">
+								<li><h4><i class="glyphicon glyphicon-plus pull-left"></i>About <i class="glyphicon glyphicon-chevron-right pull-right"></i></h4></li>
+								<li><a href="#">About Us</a></li>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">FAQs</a></li>
+								<li><a href="#">Cookies Policy</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+							</ul>
+						</li>
+						<li id="fjewelry" class="col-lg-2">
+							<ul class="list-unstyled">
+								<li><h4><i class="glyphicon glyphicon-plus pull-left"></i>Jewelry <i class="glyphicon glyphicon-chevron-right pull-right"></i></h4></li>
+								<li><a href="#">Categories</a></li>
+								<li><a href="#">Product Care</a></li>
+								<li><a href="#">Quality Assurance</a></li>
+								<li><a href="#">Returns Policy</a></li>
+								<li><a href="#">Gem Guide</a></li>
+							</ul>
+						</li>
+						<li id="fhelp" class="col-lg-2">
+							<ul class="list-unstyled">
+								<li><h4><i class="glyphicon glyphicon-plus pull-left"></i>Help <i class="glyphicon glyphicon-chevron-right pull-right"></i></h4></li>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">News</a></li>
+								<li><a href="#">Terms &amp; Conditions</a></li>
+								<li><a href="#">Legal Notice</a></li>
+								<li><a href="#">Sitemap</a></li>
+							</ul>
+						</li>
+						<li id="fcategories" class="col-lg-2">
+							<ul class="list-unstyled">
+								<li><h4><i class="glyphicon glyphicon-plus pull-left"></i>Stones <i class="glyphicon glyphicon-chevron-right pull-right"></i></h4></li>
+								<li><a href="#">Heritage</a></li>
+								<li><a href="#">Essential</a></li>
+								<li><a href="#">Onyx</a></li>
+								<li><a href="#">Amethyst</a></li>
+								<li><a href="#">Rose Quartz</a></li>
+								<li><a href="#">Smoky Quartz</a></li>							
+							</ul>
+						</li>
+						<li id="fnewsletter" class="col-lg-4">
+							<!-- Newsletter Sign Up Section -->
+							<h4>Stay in touch</h4>
+							<div class="newsletter">
+								<form class="form-inline">
+								  <div class="form-group">
+								    <input type="text" class="form-control" id="nEmail" placeholder="Enter Email Address">
+								  </div>
+								  <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-chevron-right"></i></button>
+								</form>
+							</div>
+							<div id="social" >
+								<ul class='list-inline'>
+									<li><a href='#'><i id="facebook"></i></a></li>
+									<li><a href='#'><i id="twitter"></i></a></li>
+									<li><a href='#'><i id="pinterest"></i></a></li>
+									<li><a href='#'><i id="instagram"></i></a></li>
+									<li><a href='#'><i id="contact"></i></a></li>
+								</ul>
+							</div>
+						</li>
+					</ul><!-- ./List -->
+				</div><!-- .Col 12 -->
+				<div class="col-lg-12">
+						<hr class="pearl">
+						<p href="#" class="text-center small">Copyright &copy; Lemuria Jewels Ltd</p>	
+					</div><!-- ./col-lg-12 -->
+				</div><!-- ./Row -->
+		</div><!-- ./Container -->
+	</footer><!-- ./Footer -->
+</div>
+<!-- Le javascript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo child_template_directory; ?>/js/jquery-ui-1.10.4.custom.js"></script>
+<script type="text/javascript" src="<?php echo child_template_directory; ?>/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+var Main = function() {
+	this.init();
+};
+Main.prototype = {
+	init: function() {
+		this.navigation();
+		this.sections();
+		this.hero();
+		this.features();
+		this.gems();
+	},
+	navigation:function(){
+		this.toggleMenuPreview();
+		this.closePreview();
+		this.indicator();
+	},
+	sections: function() {
+		this.resizeArrows();
+	},
+	features: function() {
+		this.showProducts();
+	},
+	hero: function() {
+		this.carousel();
+		this.heroAnimation();
+	},
+	gems: function() {
+		this.animateGems();
+		this.animateShadows();
+	},
+	carousel:function() {
+		this.carouselInit();
+		this.carouselSlide();
+	},
+	carouselInit: function() {
+		$('.carousel').carousel({
+			pause: true,
+			interval: false
+		});
+	},
+	carouselSlide: function() {
+		var self = this;
+		$('#hero-carousel').on('slid.bs.carousel', function () {
+		   self.heroAnimation();
+		});
+		$('#hero-carousel').on('slide.bs.carousel', function () {
+		  self.carouselReset();
+		 });
+	},
+	carouselReset: function() {
+		$('#hero-carousel .item:not(.active) h1').css({top: '20px', opacity: 0, 'font-size': '30px', 'line-height': '30px'});
+		$('#hero-carousel .item:not(.active) .h3-lines').css({top: '-20px', opacity: 0, 'font-size':'12px', 'line-height':'12px'});
+		$('#hero-carousel .item:not(.active) .h3-lines h3').css({'font-size': '10px', 'line-height': '10px', opacity:0});
+		$('#hero-carousel .item:not(.active) p.large').css({opacity: 0, top: '10px'});
+		$('#hero-carousel .item:not(.active) #pearl .line').css({width: 0});
+		$('#hero-carousel .item:not(.active) #pearl .pearl').css({top: '-14px',  opacity: 0});
+		$('#hero-carousel .item:not(.active) a.primary').css({opacity: 0, display: 'none'});
+	},
+	heroAnimation:function() {
+		if($(window).width() > 767) {
+			$( "h1, .h3-lines" ).animate({top:0,opacity:1,'font-size':'40px','line-height':'40px'},  1000);
+			$('.h3-lines h3').animate({top:0, opacity:1, 'font-size':'22px', 'line-height':'22px'}, 1000);
+			$('.pearl').delay(1000).animate({top:'-14px', opacity:1}, 700);
+			$('.line').delay(1400).animate({width:'100%'}, 700);
+			$('#hero p.large').delay(1800).animate({top:'0', opacity:1}, 700);
+			//$('a.primary').delay(3700).animate({opacity:1}, 700);
+			$('a.primary').delay(2200).css('display','table').animate({opacity:1}, 700);
+		} else {
+			$( "h1, .h3-lines" ).animate({top:0,opacity:1,'font-size':'42px','line-height':'42px'},  1000);
+			$('.h3-lines h3').animate({top:0, opacity:1, 'font-size':'22px', 'line-height':'22px'}, 1000);
+			$('.pearl').delay(1000).animate({top:'-14px', opacity:1}, 700);
+			$('.line').delay(1400).animate({width:'70%'}, 700);
+			$('#hero p.large').delay(1800).animate({top:'0', opacity:1}, 700);
+			//$('a.primary').delay(3700).animate({opacity:1}, 700);
+			$('a.primary').delay(2200).css('display','table').animate({opacity:1}, 700);
+		}
+	},
+	resizeArrows:function() {
+		
+	},
+	animateGems:function() {
+		var self = this; 
+		$('img.jewel').animate({'top': '+=10px'}, {
+			duration:700,
+			complete:function() {
+				$('img.jewel').animate({'top':'-=10px'}, 700);
+				self.animateGems();
+			}
+		});
+
+	},
+	animateShadows:function() {
+		var self = this; 
+		$('.shadow').animate({'width': '-=15%'}, {
+			duration:700,
+			complete:function() {
+				$('.shadow').animate({'width':'+=15%'}, 700);
+				self.animateShadows();
+			}
+		});
+	},
+	toggleMenuPreview:function() {},
+	closePreview:function() {
+		$('.close').bind('click', function() {
+			if($('html body header #dropdown').hasClass('open')) {
+				$('html body header #dropdown').removeClass('open').stop().slideUp('slow');
+			}
+		});
+	},
+	showProducts:function() {
+		$('#features .box').animate({'left':0,'right':0, 'opacity':1}, 1000);
+	},
+	indicator:function() {
+		$('#header-menu li').hover(function(){
+			var index = $(this).index();
+			var limit = $('#mainnav #header-menu li').size();
+			if(index == 0 || index >= limit-1) {
+				if($('html body header #dropdown').hasClass('open')) {
+					$('html body header #dropdown').removeClass('open').stop().slideUp('slow');
+				}
+			} else {
+				$('.carousel').carousel(index-1); 
+			}
+			if(index < limit) {
+				var total = 29;
+			    for(i=1;i<=index;i++){
+				    total += $('#mainnav #header-menu li:nth-child('+i+')').width();
+				}
+				$('#menu-indicator').stop().animate({
+				    width:($(this).width()),
+				    left:total
+				}, 600);
+			} 
+		});	
+	}
+};
+$(document).ready(function() {
+	var main = new Main();
+});
+
+
+var Gem = function (data) {
+	//Create variables
+	this.ID = data.ID;
+    this.name = data.name;
+    this.general = data.general;
+    this.img = data.img;
+}
+Gem.prototype = {
+	init: function() {
+		this.loadImg();
+		//this.clickThis();
+	},
+	 loadImg: function() {
+    		var img = new Image();
+    		img.src = this.img;
+    },
+    printHtml: function () {
+       $('#gem-selector li:nth-child('+this.ID+')').html('<a id="gem'+ this.ID + '" data-info="'+ this.ID + '" class="gem"" href="#"><div class="gem-stone"><img src="'+this.img+'"><figcaption><h4>' + this.name + '</h4></figcaption></div></a>');
+    }, 
+    showThis: function (index) {
+        $delay = index * 100;
+        $('#gem' + this.ID).delay($delay).animate({
+            'top': '0px',
+            'opacity': 1
+        }, 500, "linear");
+    },
+    showDetails: function () {
+    	var self = this;
+        $('#gem-details .content').fadeOut(function() {
+           $('#gem-details .content').html(self.general);
+           $('#gem-details .content').fadeIn();
+       });
+    },
+    showImg: function() {
+        var self = this;
+        $('#gem-img img').fadeOut(function() {
+           //$('#gem-img img').attr('src', self.img);
+           $('#gem-img img').fadeIn();
+       });
+    },
+    clickThis: function() {
+    	var self = this;
+    	var ID = this.ID;
+    	$(".gem").bind('click', function(e) {
+    		e.preventDefault();
+    		self.showDetails();
+    		self.showImg();
+    		console.log(this.ID);
+    	});
+    }
+};
+var GemLibrary = function() {
+	this.gems = []; 
+	var data = [{
+            ID: '1',
+            name: 'Amethyst',
+            rImg: '//orbitvu.co/001/eu8rieZYW6AuwPW3qSQ9i3/ov3601/3/view',
+            img: '//www.lemuriajewels.com/wp-content/uploads/2015/07/amethyst-small-thumb.jpg',
+            general: '<p>Amethyst is a common variety of quartz. It grows in geodes – crystal-filled spherical cavities that are found within volcanic rock. Despite its popularity, amethyst is classed as semiprecious because of the rarity of gem-quality stones. Amethyst tends to have colour zones throughout each crystal rather than consistent shading. Careful heating can disperse the colour more evenly, but too much heat will turn the stone to yellow, brown or green. Some amethyst will fade in daylight very quickly.</p>',
+        }, {
+            ID: '2',
+            name: 'Aquamarine',
+            rImg: '//orbitvu.co/001/eu8rieZYW6AuwPW3qSQ9i3/ov3601/3/view',
+            img: 'http://www.lemuriajewels.com/wp-content/uploads/2015/07/aquamarine-small-thumb.jpg',
+            general: '<p>Aquamarine is the precious, clear blue-green variety of the mineral beryl. Like all beryls, aquamarine is found in pegmatites, and can grow into large, hexagonal crystals and usually blessed with excellent clarity. Iron atoms within the lattice are the source of aquamarine’s blue colour.  Usually the colour is more intense in larger stones but some aquamarines from Africa displays deeper blues in faceted stones of less than 5 cts. Brazil supplies the most aquamarine to the modern market.</p>',
+        }, {
+            ID: '3',
+            name: 'Carnelian',
+            rImg: '//orbitvu.co/001/eu8rieZYW6AuwPW3qSQ9i3/ov3601/3/view',
+            img: 'http://www.lemuriajewels.com/wp-content/uploads/2015/07/carnelian-small-thumb.jpg',
+            general: '<p>Carnelian is a translucent variety of chalcedony that receives its beautiful red tints from iron oxides, such as haematite, embedded in the colourless silica. Its name come from the Latin word carneus, which means “fleshy” – a reference to its colour. </p>',
+        }, {
+            ID: '4',
+            name: 'Chalcedony',
+            rImg: '//orbitvu.co/001/eu8rieZYW6AuwPW3qSQ9i3/ov3601/3/view',
+            img: 'http://www.lemuriajewels.com/wp-content/uploads/2015/07/chalcedony-small-thumb.jpg',
+            general: '<p>Chalcedony is one of the world’s oldest abundant and most popular gemstones. Chalcedony is the name given to impact varieties of silica which comprise minute, often fibrous, quartz crystals densely packed but with submicroscopic pores. Chalcedony is precipitated from silica-bearing solutions and forms cavity linings, veins and replacement masses in a variety of rocks.</p>',
+        }, {
+            ID: '5',
+            name: 'Citrine',
+            rImg: '//orbitvu.co/001/eAumMhWE4BBt569SypHu2b/ov3601/3/view',
+            img: 'http://www.lemuriajewels.com/wp-content/uploads/2015/07/citrine-small-thumb.jpg',
+            general: '<p>Citrine is a quartz variety and the top-selling transparent gems in the yellow to orange colour range. Its name was derived from the Latin word citrus, meaning “citron” (a fruit closely related to the lemon). The Romans used it for jewellery and intaglio work, and it was a very popular for jewellery in the 19th century. Citrine comes in an exceptionally wide range of sizes. Most citrines are faceted in traditional rounds and fancy shapes, but you can also find it fashioned into more unusual cuts and carvings.</p>',
+        }, {
+            ID: '6',
+            name: 'Garnet',
+            rImg: '//orbitvu.co/001/7pt8wP5x3gsFN5soKgUFba/iproc/2d/394320/img01.png?width=701&rotate=0&height=466',
+            img: 'http://www.lemuriajewels.com/wp-content/uploads/2015/07/garnet-small-thumb.jpg',
+            general: '<p>The gemstone family ‘garnet’ contains more than ten different gemstones with similar chemical structure. The name garnet comes from Latin punica granatum, meaning pomegranade, because of the resemblance of the seeds to the stone. </p>',
+        }, {
+            ID: '7',
+            name: 'Labradorite',
+            rImg: '//orbitvu.co/001/7pt8wP5x3gsFN5soKgUFba/iproc/2d/394320/img01.png?width=701&rotate=0&height=466',
+            img: 'http://www.lemuriajewels.com/wp-content/uploads/2015/07/labradorite.jpg',
+            general: '<p>Labradorite is achameleon like stone, ranging from the dullest of greys to peacock iridescence as it catches the light, also known in the trade as “rainbow moonstone”. Labradorite is a special variety of feldspar. Large areas of the stone are exceptionally iridescent. The colour is caused by the light reflecting from microscopic crystalsof various dark minerals. Labradorite is found in both igneous and metamorphic conditions.</p>',
+        }, {
+            ID: '8',
+            name: 'Lapis lazuli',
+            rImg: '//orbitvu.co/001/7pt8wP5x3gsFN5soKgUFba/iproc/2d/394320/img01.png?width=701&rotate=0&height=466',
+            img: 'http://www.lemuriajewels.com/wp-content/uploads/2015/07/lapis-lazuli-small-thumb.jpg',
+            general: '<p>Lapis lazuli is a rock, a contact metamorphosed limestone that contains lazurite. It also contains pyrite, which add a golden-yellow sparkle, and calcite, which shows as white flecks. Lapis is Latin for ‘stone’. The names of both lazuli and lazurite are derived from the Persian word lazhuward and Latin word lazulum that means ‘blue’ or ‘heaven’. The lapis-lazuli name is often shortened to lapis, is sometimes mistakenly used for the mineral lazurite.</p>',
+        }, {
+            ID: '9',
+            name: 'Moonstone',
+            rImg: '//orbitvu.co/001/SimAst9TtJHGhngX6kAwhP/ov3601/3/view',
+            img: 'http://www.lemuriajewels.com/wp-content/uploads/2015/07/moonstone-small-thumb.jpg',
+            general: '<p>Long considered a sacred stone in India, according to Hindu mythology, moonstone is believed to be moonlight in a magical, solid form. Many other cultures also associate this gem with moonlight. It’s all due to the stone’s phenomenon also known as adularescence, the visual effect is reminiscent of the full moon shining through a veil of high, thin clouds. </p>',
+        }, {
+            ID: '10',
+            name: 'Onyx',
+            rImg: '//orbitvu.co/001/SimAst9TtJHGhngX6kAwhP/ov3601/3/view',
+            img: 'http://www.lemuriajewels.com/wp-content/uploads/2015/07/onyx-small-thumb.jpg',
+            general: '<p>Onyx is a chalcedony variety characterized by straight black and white bands. If reddish brown bands occur instead of black, it is called sardonyx. The ancient Romans carved different patterns in each layer of a multi-layered onyx and often used the stones for their seals. Onyx has been dyed since ancient times to enhance the colour. It has traditionally been used for carving cameo brooches. Onyx items are affordable, and include brooches, beads, earrings, necklaces, pendants, rings, chess pieces, cups, vases and figurines such as animals. The stone </p>',
+        }, {
+            ID: '11',
+            name: 'Pearl',
+            rImg: '//orbitvu.co/001/SimAst9TtJHGhngX6kAwhP/ov3601/3/view',
+            img: 'http://www.lemuriajewels.com/wp-content/uploads/2015/07/pearl-small-thumb.jpg',
+            general: '<p>Perhaps, the most classic gems of all time, pearls – occur in wide variety of colours. The most familiar colours are white and cream. The name “pearl” is thought to derive from the Latin word pernula, meaning “sea shell” or “mussel”. Natural pearls are organic gems that form in the bodies of certain mollusks, usually around a microscopic irritantand always without human help of any kind. They’re composed mostly of concentric layers of nacre, which is made of the same basic material as mother-of-pearl – the inside layer of certain shells. </p>',
+        }, {
+            ID: '12',
+            name: 'Peridot',
+            rImg: '//orbitvu.co/001/TJgXbyzL5ustwWwviqP3xW/ov3601/3/view',
+            img: 'http://www.lemuriajewels.com/wp-content/uploads/2015/07/peridot-small-thumb.jpg',
+            general: '<p>Peridot is the gem-quality variety of the mineral olivine. A rock-forming mineral, occurs in silica-poor igneous rocks. The crystals mostly project as granular olivines, but also in tabular forms. Peridot’s shades of greenare caused by the presence of iron, and it often has a greasy luster. The mineral is named for the French word peridot mening ‘gold’ beacause the mineral can vary towards this colour. </p>',
+        }, {
+            ID: '13',
+            name: 'Rose Quartz',
+            rImg: '//orbitvu.co/001/SimAst9TtJHGhngX6kAwhP/ov3601/3/view',
+            img: 'http://www.lemuriajewels.com/wp-content/uploads/2015/07/rose-quartz-small-thumb.jpg',
+            general: '<p>Rose quartz is a variety of quartz typically ranges in colour from very light pink to medium dark pink. It occurs primarily in massive, microcrystalline form. Transparent, gem-quality rose quartz is rare – most specimens are cloudy. Rose quartz is very brittle and often contains many fractures. The pink colour is thought to derive from titanium or manganese oxides.</p>',
+        }, {
+            ID: '14',
+            name: 'Smoky Quartz',
+            rImg: 'https://orbitvu.co/001/jwV2KsBkkXzyZFtk9LLc24/ov3601/3/view',
+            img: 'http://www.lemuriajewels.com/wp-content/uploads/2015/07/smoky-quartz-small-thumb.jpg',
+            general: '<p>Smoky quartz is one of the most common and inexpensive transparent gems on the market. Its colour varies from light to dark brown, and some stones are so dark, they’re almost black. Smoky quartz is a traditional gem in the Scottosh Highlands. Very dark smoky quartz – often called morion – was popular in the somber mourning jewellery of the late Victorian periods (1861-1901). Smoky quartz occurs in many igneous and metamorphic rocks, particularly in granite and gneiss.</p>',
+        }, {
+            ID: '15',
+            name: "Tiger's Eye",
+            rImg: '//orbitvu.co/001/SimAst9TtJHGhngX6kAwhP/ov3601/3/view',
+            img: 'http://www.lemuriajewels.com/wp-content/uploads/2015/07/tigers-eye-small-thumb.jpg',
+            general: '<p>Tiger’s eye is a striking stone with a lovely play of different colours. Tiger’s eye is one of the top-selling phenomenal gems. Its main characteristic is its “eye”, called chatoyancy, it is a form of quartz in which the original fibers of asbestos or crocodilite have been replaced by parallel quartz bands. Tiger’s eye has graded bands of yellow and golden brown in various shades. </p>',
+        }, {
+            ID: '16',
+            name: 'Turquoise',
+            rImg: '//orbitvu.co/001/SimAst9TtJHGhngX6kAwhP/ov3601/3/view',
+            img: 'http://www.lemuriajewels.com/wp-content/uploads/2015/07/turquoise-small-thumb.jpg',
+            general: '<p>Turquoise is one of the world’s most ancient gems. Archaeological excavations revealed that Egyptian royalty wore turquoise jewellery as early as 5500 BC and Chinese artisans were carving it more than 3,000 years ago. Turquoise is the national gem of Tibet, and has a long considered a stone that guarantees health, good fortune, and protection from evil. Turquoise was a ceremonial gem and medium of exchange for native Amecian tribes in the southwestern US. They also used it in their jewellery and amulets. </p>',
+        }];
+        for (i = 0; i < data.length; i++) {
+            var nGem = new Gem(data[i]);
+            nGem.init();
+            this.gems.push(nGem);
+        }
+};
+
+GemLibrary.prototype = {
+    showAll: function () {
+	for (i = 0; i < this.gems.length; i++) {
+		this.gems[i].printHtml();
+		this.gems[i].showThis();
+	} 
+    }, 
+    showInfo: function() {
+    	var self= this;
+        $(".gem").bind('click', function(e) {
+    		e.preventDefault();
+    		var ID = $(this).attr('data-info')-1;
+    		$('#gem-details .content, #gem-img > div').fadeOut(function() {
+    			$('#gem-details .content').html('<h4>'+self.gems[ID].name+'</h4>'+'<p>'+self.gems[ID].general+'</p>');
+	    		$('#gem-img > div img').attr('src', self.gems[ID].img);
+	    		$('#gem-details .content, #gem-img > div').css({ top:'20px', opacity:0, display:'block'}).animate({top:0, opacity:1}, 1500, 'linear');
+				$('#home-gem-tab').attr('data-id', self.gems[ID].ID);
+			});
+    	});
+		$('#home-gem-tab a#360-tab[data-toggle="tab"]').on('show.bs.tab', function() {
+			var ID = $('#home-gem-tab').attr('data-id');
+			$('#360').load(self.gems[ID].rImg);
+		});
+    }
+}
+var library = new GemLibrary();
+library.showAll();
+library.showInfo();
+</script>
+<?php wp_footer(); ?>
+</body>
+</html>
